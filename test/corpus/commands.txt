@@ -30,9 +30,9 @@ echo [echo hello]
     (simple_word)
     (word_list
       (command_substitution
-        (command
+        (command_nocomment
           (simple_word)
-          (word_list
+          (word_list_nocomment
             (simple_word)))))))
 
 ================================================================================

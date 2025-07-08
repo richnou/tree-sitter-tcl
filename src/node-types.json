@@ -342,6 +342,60 @@
     }
   },
   {
+    "type": "command_nocomment",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_list_nocomment",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "array_index",
+            "named": true
+          },
+          {
+            "type": "braced_word",
+            "named": true
+          },
+          {
+            "type": "command_substitution",
+            "named": true
+          },
+          {
+            "type": "escaped_character",
+            "named": true
+          },
+          {
+            "type": "quoted_word",
+            "named": true
+          },
+          {
+            "type": "simple_word",
+            "named": true
+          },
+          {
+            "type": "unpack",
+            "named": true
+          },
+          {
+            "type": "variable_substitution",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "command_substitution",
     "named": true,
     "fields": {},
@@ -354,11 +408,7 @@
           "named": true
         },
         {
-          "type": "command",
-          "named": true
-        },
-        {
-          "type": "comment",
+          "type": "command_nocomment",
           "named": true
         },
         {
@@ -1295,6 +1345,49 @@
         },
         {
           "type": "braced_word",
+          "named": true
+        },
+        {
+          "type": "command_substitution",
+          "named": true
+        },
+        {
+          "type": "escaped_character",
+          "named": true
+        },
+        {
+          "type": "quoted_word",
+          "named": true
+        },
+        {
+          "type": "simple_word",
+          "named": true
+        },
+        {
+          "type": "unpack",
+          "named": true
+        },
+        {
+          "type": "variable_substitution",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "word_list_nocomment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_index",
+          "named": true
+        },
+        {
+          "type": "braced_word_simple",
           "named": true
         },
         {

@@ -2,6 +2,7 @@
 
 (command name: (simple_word) @function)
 
+
 "proc" @keyword.function @keyword
 
 (procedure

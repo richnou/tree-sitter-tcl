@@ -9,14 +9,14 @@ build: parser/tcl.so ## Build the tree-sitter-tcl parser
 parser/tcl.so: src/parser.c src/scanner.c ## Compile parser C files into shared object
 	$(RM) $@
 	mkdir -p parser
-	tree-sitter build -o $@
+	./node_modules/.bin/tree-sitter build -o $@
 
 src/parser.c: grammar.js deps ## Generate parser source from grammar.js
 	./node_modules/.bin/tree-sitter generate
 
 .PHONY: test
 test: parser/tcl.so ## Run tree-sitter tests
-	tree-sitter test
+	./node_modules/.bin/tree-sitter test
 
 .PHONY: clean
 clean: ## Clean local environment

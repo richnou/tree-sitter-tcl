@@ -281,6 +281,19 @@
         }
       ]
     },
+    "_command_nocomment": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_builtin"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "command_nocomment"
+        }
+      ]
+    },
     "command": {
       "type": "SEQ",
       "members": [
@@ -310,11 +323,47 @@
         }
       ]
     },
+    "command_nocomment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_word"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "arguments",
+              "content": {
+                "type": "SYMBOL",
+                "name": "word_list_nocomment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "word_list": {
       "type": "REPEAT1",
       "content": {
         "type": "SYMBOL",
         "name": "_word"
+      }
+    },
+    "word_list_nocomment": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_word_nocomment"
       }
     },
     "unpack": {
@@ -342,6 +391,36 @@
             {
               "type": "SYMBOL",
               "name": "braced_word"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_concat_word"
+            }
+          ]
+        }
+      ]
+    },
+    "_word_nocomment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "unpack"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "braced_word_simple"
             },
             {
               "type": "SYMBOL",
@@ -1743,7 +1822,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_command"
+          "name": "_command_nocomment"
         },
         {
           "type": "STRING",
