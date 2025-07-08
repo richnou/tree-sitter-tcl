@@ -205,7 +205,12 @@ module.exports = grammar({
         ),
       ),
 
-    arguments: ($) => choice(seq("{", repeat($.argument), "}"), $.simple_word),
+    arguments: ($) =>
+      choice(
+        seq("{", repeat($.argument), "}"),
+        $.simple_word,
+        $.command_substitution,
+      ),
 
     number: ($) => /[+-]?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?/,
     _boolean: ($) =>

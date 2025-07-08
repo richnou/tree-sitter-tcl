@@ -29,3 +29,42 @@ proc foo {arg1 arg2} {
             (variable_substitution
               (id))
             (escaped_character)))))))
+
+================================================================================
+Procedures with list command substitution
+================================================================================
+
+proc foo [list a b c] {
+    echo "hello"
+    echo "word$hi \$bye word"
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (procedure
+    (simple_word)
+    (arguments
+      (command_substitution
+       (command_nocomment
+         (simple_word)
+         (word_list_nocomment
+           (simple_word)
+           (simple_word)
+           (simple_word)
+         )
+        )
+      )
+    )
+    (braced_word
+      (command
+        (simple_word)
+        (word_list
+          (quoted_word)))
+      (command
+        (simple_word)
+        (word_list
+          (quoted_word
+            (variable_substitution
+              (id))
+            (escaped_character)))))))

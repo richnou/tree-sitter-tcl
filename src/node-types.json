@@ -46,6 +46,10 @@
           "named": true
         },
         {
+          "type": "command_substitution",
+          "named": true
+        },
+        {
           "type": "simple_word",
           "named": true
         }
