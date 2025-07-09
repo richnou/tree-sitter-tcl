@@ -49,19 +49,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_conditional"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "global"
-        },
-        {
-          "type": "SYMBOL",
           "name": "namespace"
         },
         {
           "type": "SYMBOL",
-          "name": "procedure"
+          "name": "regexp"
         },
         {
           "type": "SYMBOL",
@@ -69,27 +61,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "try"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "foreach"
-        },
-        {
-          "type": "SYMBOL",
           "name": "expr_cmd"
         },
         {
           "type": "SYMBOL",
-          "name": "while"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "catch"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "regexp"
+          "name": "procedure"
         }
       ]
     },
@@ -117,23 +93,6 @@
         }
       ]
     },
-    "while": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "while"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "expr"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_word"
-        }
-      ]
-    },
     "expr_cmd": {
       "type": "SEQ",
       "members": [
@@ -144,51 +103,6 @@
         {
           "type": "SYMBOL",
           "name": "expr"
-        }
-      ]
-    },
-    "foreach": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "foreach"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_concat_word"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_word_simple"
-              }
-            ]
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_word"
-        }
-      ]
-    },
-    "global": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "global"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_concat_word"
-          }
         }
       ]
     },
@@ -233,6 +147,35 @@
                 {
                   "type": "SYMBOL",
                   "name": "arguments"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_word"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "trap"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "arguments"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_word_simple"
                 },
                 {
                   "type": "SYMBOL",
@@ -1636,117 +1579,6 @@
           }
         ]
       }
-    },
-    "elseif": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "elseif"
-        },
-        {
-          "type": "FIELD",
-          "name": "condition",
-          "content": {
-            "type": "SYMBOL",
-            "name": "expr"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "consequence",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_word"
-          }
-        }
-      ]
-    },
-    "else": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "else"
-        },
-        {
-          "type": "FIELD",
-          "name": "consequence",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_word"
-          }
-        }
-      ]
-    },
-    "if": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "if"
-        },
-        {
-          "type": "FIELD",
-          "name": "condition",
-          "content": {
-            "type": "SYMBOL",
-            "name": "expr"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "consequence",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_word"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "FIELD",
-            "name": "alternative",
-            "content": {
-              "type": "SYMBOL",
-              "name": "elseif"
-            }
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "FIELD",
-              "name": "alternative",
-              "content": {
-                "type": "SYMBOL",
-                "name": "else"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "_conditional": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "if"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "else"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "elseif"
-        }
-      ]
     },
     "catch": {
       "type": "SEQ",

@@ -151,10 +151,6 @@
       "required": false,
       "types": [
         {
-          "type": "catch",
-          "named": true
-        },
-        {
           "type": "command",
           "named": true
         },
@@ -163,27 +159,7 @@
           "named": true
         },
         {
-          "type": "else",
-          "named": true
-        },
-        {
-          "type": "elseif",
-          "named": true
-        },
-        {
           "type": "expr_cmd",
-          "named": true
-        },
-        {
-          "type": "foreach",
-          "named": true
-        },
-        {
-          "type": "global",
-          "named": true
-        },
-        {
-          "type": "if",
           "named": true
         },
         {
@@ -200,14 +176,6 @@
         },
         {
           "type": "set",
-          "named": true
-        },
-        {
-          "type": "try",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -239,49 +207,6 @@
         },
         {
           "type": "simple_word",
-          "named": true
-        },
-        {
-          "type": "variable_substitution",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "catch",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "array_index",
-          "named": true
-        },
-        {
-          "type": "braced_word",
-          "named": true
-        },
-        {
-          "type": "command_substitution",
-          "named": true
-        },
-        {
-          "type": "escaped_character",
-          "named": true
-        },
-        {
-          "type": "quoted_word",
-          "named": true
-        },
-        {
-          "type": "simple_word",
-          "named": true
-        },
-        {
-          "type": "unpack",
           "named": true
         },
         {
@@ -408,35 +333,11 @@
       "required": true,
       "types": [
         {
-          "type": "catch",
-          "named": true
-        },
-        {
           "type": "command_nocomment",
           "named": true
         },
         {
-          "type": "else",
-          "named": true
-        },
-        {
-          "type": "elseif",
-          "named": true
-        },
-        {
           "type": "expr_cmd",
-          "named": true
-        },
-        {
-          "type": "foreach",
-          "named": true
-        },
-        {
-          "type": "global",
-          "named": true
-        },
-        {
-          "type": "if",
           "named": true
         },
         {
@@ -454,114 +355,8 @@
         {
           "type": "set",
           "named": true
-        },
-        {
-          "type": "try",
-          "named": true
-        },
-        {
-          "type": "while",
-          "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "else",
-    "named": true,
-    "fields": {
-      "consequence": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "array_index",
-            "named": true
-          },
-          {
-            "type": "braced_word",
-            "named": true
-          },
-          {
-            "type": "command_substitution",
-            "named": true
-          },
-          {
-            "type": "escaped_character",
-            "named": true
-          },
-          {
-            "type": "quoted_word",
-            "named": true
-          },
-          {
-            "type": "simple_word",
-            "named": true
-          },
-          {
-            "type": "unpack",
-            "named": true
-          },
-          {
-            "type": "variable_substitution",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "elseif",
-    "named": true,
-    "fields": {
-      "condition": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "expr",
-            "named": true
-          }
-        ]
-      },
-      "consequence": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "array_index",
-            "named": true
-          },
-          {
-            "type": "braced_word",
-            "named": true
-          },
-          {
-            "type": "command_substitution",
-            "named": true
-          },
-          {
-            "type": "escaped_character",
-            "named": true
-          },
-          {
-            "type": "quoted_word",
-            "named": true
-          },
-          {
-            "type": "simple_word",
-            "named": true
-          },
-          {
-            "type": "unpack",
-            "named": true
-          },
-          {
-            "type": "variable_substitution",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {
@@ -631,202 +426,9 @@
     }
   },
   {
-    "type": "finally",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "array_index",
-          "named": true
-        },
-        {
-          "type": "braced_word",
-          "named": true
-        },
-        {
-          "type": "command_substitution",
-          "named": true
-        },
-        {
-          "type": "escaped_character",
-          "named": true
-        },
-        {
-          "type": "quoted_word",
-          "named": true
-        },
-        {
-          "type": "simple_word",
-          "named": true
-        },
-        {
-          "type": "unpack",
-          "named": true
-        },
-        {
-          "type": "variable_substitution",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "foreach",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "array_index",
-          "named": true
-        },
-        {
-          "type": "braced_word",
-          "named": true
-        },
-        {
-          "type": "braced_word_simple",
-          "named": true
-        },
-        {
-          "type": "command_substitution",
-          "named": true
-        },
-        {
-          "type": "escaped_character",
-          "named": true
-        },
-        {
-          "type": "quoted_word",
-          "named": true
-        },
-        {
-          "type": "simple_word",
-          "named": true
-        },
-        {
-          "type": "unpack",
-          "named": true
-        },
-        {
-          "type": "variable_substitution",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "global",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "array_index",
-          "named": true
-        },
-        {
-          "type": "command_substitution",
-          "named": true
-        },
-        {
-          "type": "escaped_character",
-          "named": true
-        },
-        {
-          "type": "quoted_word",
-          "named": true
-        },
-        {
-          "type": "simple_word",
-          "named": true
-        },
-        {
-          "type": "variable_substitution",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "id",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "if",
-    "named": true,
-    "fields": {
-      "alternative": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "else",
-            "named": true
-          },
-          {
-            "type": "elseif",
-            "named": true
-          }
-        ]
-      },
-      "condition": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "expr",
-            "named": true
-          }
-        ]
-      },
-      "consequence": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "array_index",
-            "named": true
-          },
-          {
-            "type": "braced_word",
-            "named": true
-          },
-          {
-            "type": "command_substitution",
-            "named": true
-          },
-          {
-            "type": "escaped_character",
-            "named": true
-          },
-          {
-            "type": "quoted_word",
-            "named": true
-          },
-          {
-            "type": "simple_word",
-            "named": true
-          },
-          {
-            "type": "unpack",
-            "named": true
-          },
-          {
-            "type": "variable_substitution",
-            "named": true
-          }
-        ]
-      }
-    }
   },
   {
     "type": "namespace",
@@ -1050,10 +652,6 @@
       "required": false,
       "types": [
         {
-          "type": "catch",
-          "named": true
-        },
-        {
           "type": "command",
           "named": true
         },
@@ -1062,27 +660,7 @@
           "named": true
         },
         {
-          "type": "else",
-          "named": true
-        },
-        {
-          "type": "elseif",
-          "named": true
-        },
-        {
           "type": "expr_cmd",
-          "named": true
-        },
-        {
-          "type": "foreach",
-          "named": true
-        },
-        {
-          "type": "global",
-          "named": true
-        },
-        {
-          "type": "if",
           "named": true
         },
         {
@@ -1099,14 +677,6 @@
         },
         {
           "type": "set",
-          "named": true
-        },
-        {
-          "type": "try",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -1154,57 +724,6 @@
         },
         {
           "type": "unary_expr",
-          "named": true
-        },
-        {
-          "type": "variable_substitution",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "try",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "arguments",
-          "named": true
-        },
-        {
-          "type": "array_index",
-          "named": true
-        },
-        {
-          "type": "braced_word",
-          "named": true
-        },
-        {
-          "type": "command_substitution",
-          "named": true
-        },
-        {
-          "type": "escaped_character",
-          "named": true
-        },
-        {
-          "type": "finally",
-          "named": true
-        },
-        {
-          "type": "quoted_word",
-          "named": true
-        },
-        {
-          "type": "simple_word",
-          "named": true
-        },
-        {
-          "type": "unpack",
           "named": true
         },
         {
@@ -1279,53 +798,6 @@
         },
         {
           "type": "id",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "while",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "array_index",
-          "named": true
-        },
-        {
-          "type": "braced_word",
-          "named": true
-        },
-        {
-          "type": "command_substitution",
-          "named": true
-        },
-        {
-          "type": "escaped_character",
-          "named": true
-        },
-        {
-          "type": "expr",
-          "named": true
-        },
-        {
-          "type": "quoted_word",
-          "named": true
-        },
-        {
-          "type": "simple_word",
-          "named": true
-        },
-        {
-          "type": "unpack",
-          "named": true
-        },
-        {
-          "type": "variable_substitution",
           "named": true
         }
       ]
@@ -1534,27 +1006,11 @@
     "named": false
   },
   {
-    "type": "catch",
-    "named": false
-  },
-  {
     "type": "comment",
     "named": true
   },
   {
-    "type": "else",
-    "named": false
-  },
-  {
-    "type": "elseif",
-    "named": false
-  },
-  {
     "type": "eq",
-    "named": false
-  },
-  {
-    "type": "error",
     "named": false
   },
   {
@@ -1563,22 +1019,6 @@
   },
   {
     "type": "expr",
-    "named": false
-  },
-  {
-    "type": "finally",
-    "named": false
-  },
-  {
-    "type": "foreach",
-    "named": false
-  },
-  {
-    "type": "global",
-    "named": false
-  },
-  {
-    "type": "if",
     "named": false
   },
   {
@@ -1602,10 +1042,6 @@
     "named": true
   },
   {
-    "type": "on",
-    "named": false
-  },
-  {
     "type": "proc",
     "named": false
   },
@@ -1622,16 +1058,8 @@
     "named": true
   },
   {
-    "type": "try",
-    "named": false
-  },
-  {
     "type": "unpack",
     "named": true
-  },
-  {
-    "type": "while",
-    "named": false
   },
   {
     "type": "{",

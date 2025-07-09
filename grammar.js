@@ -43,19 +43,18 @@ module.exports = grammar({
     //comment: ($) => seq($._terminator, /\s*#[^\n]*/),
     //comment: (_) => /(\n|\;)#.*/,
     _builtin: ($) =>
-      choice(
-        $._conditional,
+      choice($.namespace, $.regexp, $.set, $.expr_cmd, $.procedure),
+    /*$._conditional,
         $.global,
         $.namespace,
         $.procedure,
         $.set,
         $.try,
-        $.foreach,
+        //$.foreach,
         $.expr_cmd,
-        $.while,
+        //$.while,
         $.catch,
-        $.regexp,
-      ),
+        $.regexp,*/
 
     // regexp ?switches? exp string ?matchVar? ?subMatchVar subMatchVar ...?
     regexp: ($) =>
@@ -66,7 +65,7 @@ module.exports = grammar({
         repeat($._concat_word),
       ),
 
-    while: ($) => seq("while", $.expr, $._word),
+    //while: ($) => seq("while", $.expr, $._word),
 
     expr_cmd: ($) => seq("expr", $.expr),
 
@@ -74,10 +73,11 @@ module.exports = grammar({
 
     //foreach: ($) => seq("foreach", repeat($._word_simple), $._word),
     //
-    foreach: ($) =>
-      seq("foreach", repeat(seq($._concat_word, $._word_simple)), $._word),
 
-    global: ($) => seq("global", repeat($._concat_word)),
+    /*foreach: ($) =>
+      seq("foreach", repeat(seq($._concat_word, $._word_simple)), $._word),*/
+
+    //global: ($) => seq("global", repeat($._concat_word)),
 
     namespace: ($) => seq("namespace", $.word_list),
 
@@ -86,6 +86,7 @@ module.exports = grammar({
         "try",
         $._word,
         optional(seq("on", "error", $.arguments, $._word)),
+        optional(seq("trap", $.arguments, $._word_simple, $._word)),
         optional($.finally),
       ),
 
@@ -295,7 +296,7 @@ module.exports = grammar({
     ternary_expr: ($) =>
       prec.left(PREC.ternary, seq($._expr, "?", $._expr, ":", $._expr)),
 
-    elseif: ($) =>
+    /*elseif: ($) =>
       seq("elseif", field("condition", $.expr), field("consequence", $._word)),
 
     else: ($) => seq("else", field("consequence", $._word)),
@@ -309,7 +310,7 @@ module.exports = grammar({
         optional(field("alternative", $.else)),
       ),
 
-    _conditional: ($) => choice($.if, $.else, $.elseif),
+    _conditional: ($) => choice($.if, $.else, $.elseif),*/
 
     // catch script ?varName?
     catch: ($) => seq("catch", $._word, optional($._concat_word)),
