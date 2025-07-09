@@ -68,3 +68,64 @@ proc foo [list a b c] {
             (variable_substitution
               (id))
             (escaped_character)))))))
+
+
+================================================================================
+Complex Procedure that can through off highlighting
+================================================================================
+
+proc ftp_download {} {
+
+    set var1 "-"
+    set var2 "-"
+    set var3 "-"
+
+    log_trace "${tid}($l_sid): src: '$src' / '$src2'"
+
+
+
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+    (procedure
+        (simple_word)
+        (arguments)
+        (braced_word
+            (set
+                (id)
+                (quoted_word)
+            )
+            (set
+                (id)
+                (quoted_word)
+            )
+            (set
+                (id)
+                (quoted_word)
+            )
+
+            (command
+                (simple_word)
+                (word_list
+                    (quoted_word
+                        (variable_substitution
+                            (array_index
+                                (variable_substitution
+                                    (id)
+                                )
+                            )
+                        )
+                        (variable_substitution
+                            (id)
+                        )
+                        (variable_substitution
+                            (id)
+                        )
+                    )
+                )
+            )
+        )
+    )
+)

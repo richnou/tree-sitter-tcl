@@ -10,8 +10,7 @@ foreach a {1 2 3 4 5} {
 
 (source_file
   (foreach
-    (arguments
-      (simple_word))
+    (simple_word)
     (braced_word_simple
       (simple_word)
       (simple_word)
@@ -24,3 +23,45 @@ foreach a {1 2 3 4 5} {
         (word_list
           (variable_substitution
             (id)))))))
+
+================================================================================
+Foreach with two lists
+================================================================================
+
+proc test args {
+
+    foreach  src $aasrc dst $aadst  {
+        put $i
+    }
+
+}
+--------------------------------------------------------------------------------
+
+(source_file
+    (procedure
+        (simple_word)
+        (arguments (simple_word))
+        (braced_word
+
+
+            (foreach
+                (simple_word)
+                (variable_substitution (id))
+                (simple_word)
+                (variable_substitution (id))
+
+                (braced_word
+                    (command
+                        (simple_word)
+                        (word_list
+                            (variable_substitution
+                                (id)
+                            )
+                        )
+                    )
+
+                )
+            )
+        )
+    )
+)

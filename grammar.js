@@ -70,7 +70,12 @@ module.exports = grammar({
 
     expr_cmd: ($) => seq("expr", $.expr),
 
-    foreach: ($) => seq("foreach", $.arguments, $._word_simple, $._word),
+    //foreach: ($) => seq("foreach", $.arguments, $._word_simple, $._word),
+
+    //foreach: ($) => seq("foreach", repeat($._word_simple), $._word),
+    //
+    foreach: ($) =>
+      seq("foreach", repeat(seq($._concat_word, $._word_simple)), $._word),
 
     global: ($) => seq("global", repeat($._concat_word)),
 
@@ -121,6 +126,9 @@ module.exports = grammar({
         ),
         $._concat,
       ),
+
+    /*_word_simple: ($) =>
+      interleaved1(choice($._concat_word, $.braced_word_simple), $._concat),*/
 
     _concat_word: ($) =>
       interleaved1(

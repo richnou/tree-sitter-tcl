@@ -682,10 +682,6 @@
       "required": true,
       "types": [
         {
-          "type": "arguments",
-          "named": true
-        },
-        {
           "type": "array_index",
           "named": true
         },

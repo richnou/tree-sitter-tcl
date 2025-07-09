@@ -155,12 +155,20 @@
           "value": "foreach"
         },
         {
-          "type": "SYMBOL",
-          "name": "arguments"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_word_simple"
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_concat_word"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_word_simple"
+              }
+            ]
+          }
         },
         {
           "type": "SYMBOL",
